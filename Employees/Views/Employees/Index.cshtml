@@ -1,0 +1,20 @@
+﻿@model Employee[]
+@{ ViewBag.Title = "Employees";
+    ViewBag.Header = "List of employees";
+}
+
+<ul>
+    @foreach (var emp in Model)
+    {
+        <li>
+            <a href="/index/@emp.Id">
+                @emp.Name 
+            </a>
+                <partial  name="_TimeStamp" model="emp" />
+
+            <a href="/delete/@emp.Id">
+                Delete
+            </a>
+        </li>
+    }
+</ul>

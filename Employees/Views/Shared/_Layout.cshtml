@@ -1,0 +1,33 @@
+﻿
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.min.css">
+</head>
+<body>
+    <nav>
+        <div><a asp-controller="Employees" asp-action="Index">Home</a></div>
+        <div><a asp-controller="Employees" asp-action="Create">Create employee</a></div>
+    </nav>
+    <h1>
+        @ViewBag.Header
+    </h1>
+
+    <div>
+        @RenderBody()
+    </div>
+
+
+
+    <footer>
+        <p>
+            Room 4 coders&trade;
+        </p>
+
+    </footer>
+    @RenderSection("scripts", false)
+</body>
+</html>

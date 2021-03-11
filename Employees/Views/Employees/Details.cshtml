@@ -1,0 +1,12 @@
+﻿@model Employee
+@{ Layout = "_Layout";
+    ViewBag.Title = "Details";
+    ViewBag.Header = $"Details of employee #{Model.Id}";
+}
+
+<h5>
+    @Model.Id - @Model.Name - @Model.Email - <partial name="_TimeStamp" model="Model" />
+    <a href="/Edit/@Model.Id">
+        Edit
+    </a>
+</h5>
