@@ -3,18 +3,38 @@
     ViewBag.Header = "List of employees";
 }
 
-<ul>
+<table>
+    <tr style="background-color:cadetblue">
+        <th>ID</th>
+        <th>Namn</th>
+        <th>Email</th>
+        <th>Anställd sedan</th>
+        <th></th>
+    </tr>
+
     @foreach (var emp in Model)
     {
-        <li>
-            <a href="/index/@emp.Id">
-                @emp.Name 
-            </a>
-                <partial  name="_TimeStamp" model="emp" />
+        <tr>
+            <th>
+                <a href="/index/@emp.Id">
+                    @emp.Id
+                </a>
+            </th>
+            <th>
+                @emp.Name
+            </th>
+            <th>
+                @emp.Email
+            </th>
+            <th>
+                <partial name="_TimeStamp" model="emp" />
+            </th>
+            <th>
+                <a href="/delete/@emp.Id">
+                    Delete
+                </a>
+            </th>
 
-            <a href="/delete/@emp.Id">
-                Delete
-            </a>
-        </li>
+        </tr>
     }
-</ul>
+</table>
