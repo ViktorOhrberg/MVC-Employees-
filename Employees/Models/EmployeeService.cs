@@ -7,7 +7,7 @@ namespace Employees.Models
 {
     public class EmployeeService
     {
-        static public List<Employee> Employees = new();
+        public List<Employee> Employees = new();
         static int noOfEmployee = 1;
         public void AddEmployee(Employee employee)
         {

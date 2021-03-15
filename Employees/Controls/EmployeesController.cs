@@ -9,16 +9,30 @@ namespace Employees.Controls
 {
     public class EmployeesController : Controller
     {
-        EmployeeService service = new();
+        IContentService contentService;
+        EmployeeService service;
+        public EmployeesController(EmployeeService service, IContentService contentService)
+        {
+            this.contentService = contentService;
+            this.service = service;
+        }
 
         [Route("")]
         [Route("index")]
+
 
         public IActionResult Index()
         {
             var employees = service.GetAllEmployees();
             return View(employees);
         }
+        [Route("about")]
+
+        public IActionResult About()
+        {
+            return View(contentService);
+        }
+
 
         [Route("Create")]
         [HttpGet]

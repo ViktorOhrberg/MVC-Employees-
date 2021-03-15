@@ -80,3 +80,4 @@ C:\Users\Viktor\source\repos\ASP.NET Core\MVC Employees\Employees\obj\Debug\net5
 C:\Users\Viktor\source\repos\ASP.NET Core\MVC Employees\Employees\obj\Debug\net5.0\Employees.pdb
 C:\Users\Viktor\source\repos\ASP.NET Core\MVC Employees\Employees\obj\Debug\net5.0\Employees.genruntimeconfig.cache
 C:\Users\Viktor\source\repos\ASP.NET Core\MVC Employees\Employees\obj\Debug\net5.0\Employees.csproj.CopyComplete
+C:\Users\Viktor\source\repos\ASP.NET Core\MVC Employees\Employees\obj\Debug\net5.0\Razor\Views\Employees\About.cshtml.g.cs
