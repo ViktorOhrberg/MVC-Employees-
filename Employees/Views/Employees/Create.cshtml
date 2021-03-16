@@ -1,4 +1,4 @@
-﻿@model Employee
+﻿@model EmployeeCreateVM
 @{ ViewBag.Title = "Create employee";
     ViewBag.Header = "Create employee";
 }
@@ -7,9 +7,13 @@
     <label asp-for="Name"></label>
     <input asp-for="Name" />
     <span asp-validation-for="Name"></span>
+
     <label asp-for="Email"></label>
     <input asp-for="Email" />
     <span asp-validation-for="Email"></span>
+    <label asp-for="BotCheck"></label>
+    <input asp-for="BotCheck" />
+    <span asp-validation-for="BotCheck"></span>
     <br />
     <input type="submit" value="Ok" />
 </form>

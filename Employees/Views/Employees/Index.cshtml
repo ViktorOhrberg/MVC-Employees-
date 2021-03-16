@@ -1,4 +1,4 @@
-﻿@model Employee[]
+﻿@model EmployeeIndexVM[]
 @{ ViewBag.Title = "Employees";
     ViewBag.Header = "List of employees";
 }
@@ -9,7 +9,6 @@
         <th>ID</th>
         <th>Namn</th>
         <th>Email</th>
-        <th>Anställd sedan</th>
         <th></th>
     </tr>
 
@@ -21,14 +20,11 @@
                     @emp.Id
                 </a>
             </th>
-            <th>
+            <th style=@(emp.ShowAsHighlighted ?"color:red" : "")>
                 @emp.Name
             </th>
             <th>
                 @emp.Email
-            </th>
-            <th>
-                <partial name="_TimeStamp" model="emp" />
             </th>
             <th>
                 <a href="/delete/@emp.Id">

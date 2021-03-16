@@ -1,4 +1,6 @@
 ﻿using Employees.Models;
+using Employees.Models.Entities;
+using Employees.Models.ViewModels;
 using Microsoft.AspNetCore.Mvc;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ namespace Employees.Controls
 {
     public class EmployeesController : Controller
     {
-        IContentService contentService;
+        public IContentService contentService;
         EmployeeService service;
         public EmployeesController(EmployeeService service, IContentService contentService)
         {
@@ -30,7 +32,7 @@ namespace Employees.Controls
 
         public IActionResult About()
         {
-            return View(contentService);
+            return View(service.GetAbout());
         }
 
 
@@ -43,7 +45,7 @@ namespace Employees.Controls
 
         [Route("Create")]
         [HttpPost]
-        public IActionResult Create(Employee employee)
+        public IActionResult Create(EmployeeCreateVM employee)
         {
             if (!ModelState.IsValid)
             {
@@ -75,12 +77,17 @@ namespace Employees.Controls
         public IActionResult Edit(int id)
         {
             var employee = service.GetEmployeeById(id);
-            return View(employee);
+            EmployeeEditVM emp = new()
+            {
+                Name = employee.Name,
+                Email = employee.Email
+            };
+            return View(emp);
         }
 
         [Route("Edit/{id}")]
         [HttpPost]
-        public IActionResult Edit(Employee employee)
+        public IActionResult Edit(EmployeeEditVM employee)
         {
             if (!ModelState.IsValid)
             {

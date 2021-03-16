@@ -7,7 +7,7 @@ namespace Employees.Models
 {
     public interface IContentService
     {
-        abstract public string GetHeader();
-        abstract public string GetBody();
+        public string GetHeader();
+        public string GetBody();
     }
 }

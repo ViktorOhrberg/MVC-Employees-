@@ -1,4 +1,4 @@
-﻿@model IContentService
+﻿@model AboutVM;
 @{ ViewBag.Title = "About";
     ViewBag.Header = "About";
 }
@@ -8,7 +8,16 @@
     <title></title>
 </head>
 <body>
-    <h1>@Model.GetHeader()</h1>
-    <p>@Model.GetBody()</p>
+    <h1>@Model.Header</h1>
+    <p>@Model.Body</p>
+    <ul>
+
+        @foreach (var item in Model.ListEmp)
+        {
+            <li>
+                @item
+            </li>
+        }
+    </ul>
 </body>
 </html>
